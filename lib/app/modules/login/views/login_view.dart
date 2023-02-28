@@ -104,7 +104,7 @@ class LoginView extends GetView<LoginController> {
                       cText: 'Login',
                       colorBg: MyTheme.red,
                       onTap: () {
-                        Get.offNamed(Routes.SEAT_BOOKING);
+                        Get.offNamed(Routes.BUS_DASHBOARD);
                       }),
                 ],
               ),
