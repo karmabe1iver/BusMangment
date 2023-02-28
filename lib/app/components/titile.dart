@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../asset_helper.dart';
+import '../../uitils/asset_helper.dart';
 
 Widget TitleCard({scale}){
   return  Stack(

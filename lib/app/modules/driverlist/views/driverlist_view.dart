@@ -2,7 +2,7 @@ import 'package:bus_details/app/components/customized_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../asset_helper.dart';
+import '../../../../uitils/asset_helper.dart';
 import '../../../../my_theme.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/driverlist_controller.dart';

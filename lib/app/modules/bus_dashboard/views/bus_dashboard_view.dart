@@ -1,6 +1,6 @@
 import 'package:bus_details/app/components/titile.dart';
 import 'package:bus_details/app/routes/app_pages.dart';
-import 'package:bus_details/asset_helper.dart';
+import 'package:bus_details/uitils/asset_helper.dart';
 import 'package:bus_details/my_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
