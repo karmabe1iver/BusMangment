@@ -7,6 +7,8 @@ abstract class Routes {
   static const BUS_DASHBOARD = _Paths.BUS_DASHBOARD;
   static const LOGIN = _Paths.LOGIN;
   static const SEAT_BOOKING = _Paths.SEAT_BOOKING;
+  static const DRIVERLIST = _Paths.DRIVERLIST;
+  static const ADD_DRIVERS = _Paths.ADD_DRIVERS;
 }
 
 abstract class _Paths {
@@ -15,4 +17,6 @@ abstract class _Paths {
   static const BUS_DASHBOARD = '/bus-dashboard';
   static const LOGIN = '/login';
   static const SEAT_BOOKING = '/seat-booking';
+  static const DRIVERLIST = '/driverlist';
+  static const ADD_DRIVERS = '/add-drivers';
 }

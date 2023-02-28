@@ -107,7 +107,8 @@ class SeatBookingView extends GetView<SeatBookingController> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 32.0,right: 32.0),
+                          padding:
+                              const EdgeInsets.only(top: 32.0, right: 32.0),
                           child: DriverSeat(),
                         ),
                       ],

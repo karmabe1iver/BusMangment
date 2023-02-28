@@ -1,4 +1,5 @@
 import 'package:bus_details/app/components/titile.dart';
+import 'package:bus_details/app/routes/app_pages.dart';
 import 'package:bus_details/asset_helper.dart';
 import 'package:bus_details/my_theme.dart';
 import 'package:flutter/material.dart';
@@ -124,12 +125,29 @@ class BusDashboardView extends GetView<BusDashboardController> {
                           ],
                         ),
                       ),
-                      Expanded(child: Padding(
+                      Expanded(
+                          child: Padding(
                         padding: const EdgeInsets.all(24.0),
-                        child: Container(
-                          height: Get.height*.05,
-                          decoration: BoxDecoration(color: MyTheme.red,borderRadius: BorderRadius.circular(5)),
-                          child: Center(child: Text('Manage',style: MyTheme.regularTextStyle(color: MyTheme.white,textSize: 12,fontWeight: FontWeight.w500),),),),
+                        child:InkWell(
+                          onTap: (){
+                            Get.toNamed(Routes.DRIVERLIST);
+                          },child: Container(
+                          height: Get.height * .05,
+                          decoration: BoxDecoration(
+                              color: MyTheme.red,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Center(
+
+                              child: Text(
+                                'Manage',
+                                style: MyTheme.regularTextStyle(
+                                    color: MyTheme.white,
+                                    textSize: 12,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                        ),
                       ))
                     ],
                   ),

@@ -23,20 +23,19 @@ class HomeView extends GetView<HomeController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: Get.height*.1,
+                height: Get.height * .1,
               ),
               Container(
                 child: TitleCard(),
               ),
-             CustomizedButton(
-               onTap: (){
-                 Get.offNamed(Routes.LOGIN);
-               },
-               colorText: MyTheme.red,
-               colorBg: MyTheme.white,
-               cPadding: EdgeInsets.all(24.0),
-               cText: 'Get Started'
-             )
+              CustomizedButton(
+                  onTap: () {
+                    Get.offNamed(Routes.LOGIN);
+                  },
+                  colorText: MyTheme.red,
+                  colorBg: MyTheme.white,
+                  cPadding: EdgeInsets.all(24.0),
+                  cText: 'Get Started')
             ],
           ),
         ),

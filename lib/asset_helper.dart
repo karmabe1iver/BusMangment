@@ -24,4 +24,6 @@ abstract class AssetHelper {
   static get rectanle => images('Rectangle.png');
 
   static get rectanleBlck => images('Rectangleblck.png');
+
+  static get DProfilepic => images('Ellipse.png');
 }
