@@ -1,3 +1,13 @@
+import 'dart:convert';
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
+import 'package:flutter/cupertino.dart';
+
+import '../app/data/presets/api_paths.dart';
+
 class MyDio {
   static String baseUrl = ApiPaths.baseUrl;
 
@@ -7,17 +17,17 @@ class MyDio {
     BaseOptions options = BaseOptions(
       baseUrl: baseUrl,
       receiveDataWhenStatusError: true,
-      connectTimeout: 60 * 500,
+      connectTimeout: Duration(seconds: 30),
       // 30 seconds
-      receiveTimeout: 60 * 1000,
+      receiveTimeout: Duration(seconds: 60),
       // 60 seconds
 
-      responseType: ResponseType.plain,
-      headers: {
-        Headers.contentTypeHeader: "application/json",
-        if (App.token.isNotEmpty) "Authorization": "Token ${App.user.token}",
-        if (App.subOrgs.isNotEmpty) "Suborg": App.selectedSuborg.id,
-      },
+      // responseType: ResponseType.plain,
+      // headers: {
+      //   Headers.contentTypeHeader: "application/json",
+      //   if (App.token.isNotEmpty) "Authorization": "Token ${App.user.token}",
+      //   if (App.subOrgs.isNotEmpty) "Suborg": App.selectedSuborg.id,
+      // },
     );
 
     _dio = Dio(options);
@@ -93,7 +103,7 @@ class MyDio {
       }
       log('error type >>>${ex.type}');
       debugPrint("************** Error End ************************");
-      if (ex.type == DioErrorType.connectTimeout) {
+      if (ex.type == DioErrorType.connectionTimeout) {
         throw Exception(ex.message);
       } else {
         return ex;
@@ -150,7 +160,7 @@ class MyDio {
       }
       log('error type >>>${ex.type}');
       debugPrint("************** Error End ************************");
-      if (ex.type == DioErrorType.connectTimeout) {
+      if (ex.type == DioErrorType.connectionTimeout) {
         throw Exception(ex.message);
       } else {
         return ex;
@@ -215,16 +225,16 @@ class MyDio {
         debugPrint("Body: ${e.requestOptions.data}");
       }
       debugPrint("************** Error End ************************");
-      if (e.type == DioErrorType.response) {
+      if (e.type == DioErrorType.values) {
         throw Exception('No proper response from server');
       }
-      if (e.type == DioErrorType.connectTimeout) {
+      if (e.type == DioErrorType.connectionTimeout) {
         throw Exception('Connection timed-out. Check internet connection.');
       }
       if (e.type == DioErrorType.receiveTimeout) {
         throw Exception('Unable to connect to the server');
       }
-      if (e.type == DioErrorType.other) {
+      if (e.type == DioErrorType.unknown) {
         throw Exception('Something went wrong with server communication');
       }
       log(e.toString());
@@ -282,22 +292,25 @@ class MyDio {
         debugPrint("Body: ${e.requestOptions.data}");
       }
       debugPrint("************** Error End ************************");
-      if (e.type == DioErrorType.response) {
+      if (e.type == DioErrorType.values) {
         print("pathhhhhhhhhhh");
         print(path);
         throw Exception('No proper response from server');
       }
-      if (e.type == DioErrorType.connectTimeout) {
+      if (e.type == DioErrorType.connectionTimeout) {
         throw Exception('Connection timed-out. Check internet connection.');
       }
       if (e.type == DioErrorType.receiveTimeout) {
         throw Exception('Unable to connect to the server');
       }
-      if (e.type == DioErrorType.other) {
+      if (e.type == DioErrorType.values) {
         throw Exception('Something went wrong with server communication');
       }
       log(e.toString());
       throw Exception(e.toString());
     }
   }
+}
+
+class App {
 }

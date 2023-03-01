@@ -5,6 +5,7 @@ import 'package:bus_details/my_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../uitils/err_m.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -73,6 +74,7 @@ class LoginView extends GetView<LoginController> {
                         ),
                         child: Center(
                           child: TextFormField(
+                            controller: controller.emailController,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'Enter username',
@@ -90,6 +92,7 @@ class LoginView extends GetView<LoginController> {
                         ),
                         child: Center(
                           child: TextFormField(
+                            controller: controller.passwordController,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'Enter Password',
@@ -104,7 +107,7 @@ class LoginView extends GetView<LoginController> {
                       cText: 'Login',
                       colorBg: MyTheme.red,
                       onTap: () {
-                        Get.offNamed(Routes.BUS_DASHBOARD);
+                        errM(() => controller.checkLogin());
                       }),
                 ],
               ),
