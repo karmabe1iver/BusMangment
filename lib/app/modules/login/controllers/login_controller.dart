@@ -24,7 +24,7 @@ class LoginController extends GetxController {
      else{
        Get.offNamed(Routes.BUS_DASHBOARD);
     }
-     if(login.)
+
   }
 
   final count = 0.obs;
