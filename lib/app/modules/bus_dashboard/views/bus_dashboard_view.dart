@@ -22,8 +22,8 @@ class BusDashboardView extends GetView<BusDashboardController> {
             child: TitleCard(scale: 1.5),
           ),
           Container(
-            padding: EdgeInsets.only(left:24,right:18,top: 18),
-            height: Get.height * .28,
+            padding: EdgeInsets.only(left:24,right:18,top: 18,bottom: 18),
+            height: Get.height * .26,
             child:
                 Row(
 
@@ -34,8 +34,8 @@ class BusDashboardView extends GetView<BusDashboardController> {
                           Get.toNamed(Routes.SEAT_BOOKING);
                         },
                         child: Container(
-                          width: Get.width*2/5,
-                          height: Get.height*.26,
+                          width: Get.width*.4,
+                          height: Get.height*.22,
                           padding: EdgeInsets.only(top: 12, left: 12),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -88,8 +88,8 @@ class BusDashboardView extends GetView<BusDashboardController> {
                             Get.toNamed(Routes.DRIVERLIST);
                           },
                           child: Container(
-                            width: Get.width*2/5,
-                            height: Get.height*.24,
+                            width: Get.width*.4,
+                            height: Get.height*.217,
                             padding: EdgeInsets.only(top: 12, left: 12,bottom: 1),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -122,8 +122,11 @@ class BusDashboardView extends GetView<BusDashboardController> {
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Image.asset(
-                                        AssetHelper.driverDp,
+                                      Padding(
+                                        padding: const EdgeInsets.only(right: 6.0),
+                                        child: Image.asset(
+                                          AssetHelper.driverDp,
+                                        ),
                                       )
                                     ],
                                   ),
