@@ -25,7 +25,9 @@ class DriverlistView extends GetView<DriverlistController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.back();
+                  },
                   icon: Icon(
                     Icons.arrow_back,
                     size: 28,

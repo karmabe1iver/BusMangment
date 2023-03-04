@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
 
 class SeatBookingController extends GetxController {
-  //TODO: Implement SeatBookingController
+
 
   final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
+
   }
 
   @override
