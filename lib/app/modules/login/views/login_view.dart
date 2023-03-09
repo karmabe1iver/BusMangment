@@ -1,8 +1,11 @@
+
+
 import 'package:bus_details/app/components/customized_button.dart';
 import 'package:bus_details/app/routes/app_pages.dart';
 import 'package:bus_details/uitils/asset_helper.dart';
 import 'package:bus_details/my_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../../uitils/err_m.dart';
@@ -14,7 +17,9 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body:
+
+      Column(
         children: [
           Stack(
             alignment: Alignment.center,
@@ -74,6 +79,10 @@ class LoginView extends GetView<LoginController> {
                         ),
                         child: Center(
                           child: TextFormField(
+
+                            onTap: (){
+                              controller.isLoggingProgress.value=false;
+                            },
                             controller: controller.emailController,
                             decoration: InputDecoration(
                               border: InputBorder.none,
@@ -92,6 +101,12 @@ class LoginView extends GetView<LoginController> {
                         ),
                         child: Center(
                           child: TextFormField(
+
+                            onTap: (){
+
+                              controller.isLoggingProgress.value=false;
+                              print(controller.isLoggingProgress.value);
+                            },
                             controller: controller.passwordController,
                             decoration: InputDecoration(
                               border: InputBorder.none,
@@ -102,13 +117,23 @@ class LoginView extends GetView<LoginController> {
                       ),
                     ],
                   ),
-                  CustomizedButton(
-                      colorText: MyTheme.white,
-                      cText: 'Login',
-                      colorBg: MyTheme.red,
-                      onTap: () {
-                        errM(() => controller.checkLogin());
-                      }),
+                  if (WidgetsBinding.instance.window.viewInsets.bottom >
+                      0.0)
+                    SizedBox(
+                      height: 10,
+                      width: double.infinity,
+                    )
+                  else
+
+                CustomizedButton(
+                  // cPadding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.top),
+                        colorText: MyTheme.white,
+                        cText: 'Login',
+                        colorBg: MyTheme.red,
+                        onTap: () {
+                          errM(() => controller.checkLogin());
+                        })
+
                 ],
               ),
             ),

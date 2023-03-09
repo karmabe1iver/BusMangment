@@ -13,6 +13,7 @@ Widget CustomizedButton({onTap,cText,colorText,colorBg,cPadding}){
   child: Padding(
     padding: cPadding?? EdgeInsets.only(bottom: 24.0),
     child: Container(
+      width: double.infinity,
     height: Get.height * .07,
     child: Center(
     child: Text( cText,
